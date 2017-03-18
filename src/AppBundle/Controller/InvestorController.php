@@ -44,6 +44,33 @@ class InvestorController extends BaseController
         $this->params['menu_item']= 'investment_opportunities';
         return $this->render('AppBundle:Investor:invest.html.twig',$this->params);        
     }
+
+    /**
+     * @Route("/invest/{offering_id}", name="view_investment")
+     */
+
+    public function viewInvestmentAction($offering_id)
+    {
+        $authenticated = $this->get('session')->get('authenticated');
+        if (!$authenticated) {
+            return $this->redirectToRoute('homepage',array('required' => 'login'));
+        }
+
+        $offering = [];
+        if ($this->get('session')->get('authenticated') == true) {
+
+            $cvResponse = $this->get('offering')->getOfferingWithId($offering_id);
+
+            if ($cvResponse->outcome == CVResponse::RESPONSE_OUTCOME_SUCCESS) {
+
+                $offering = $cvResponse->object;
+            }
+        }
+                        
+        $this->params['offering']= $offering;
+        return $this->render('AppBundle:Investor:company_detail.html.twig',$this->params);
+    }
+
        
     /**
      * @Route("/company/{offering_id}", name="view_company")
