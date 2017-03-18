@@ -32,10 +32,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7">
+						<h4>Offering - {{offering.id}}</h4>
+						<h4>Organization - {{organization.id}}</h4>
+						<h4>Investment - {{investment.id}}</h4>
                         <div class="progress">
-                        	<h4>{{offering.name}}</h4>
-                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ offering.raised_percent }}" aria-valuemin="0" aria-valuemax="100" style="width:{{offering.raisedPercent}}%">
-                                <span style="color:black">{{ offering.raised_percent }}% Funded</span>
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ offering.raisedPercent }}" aria-valuemin="0" aria-valuemax="100" style="width:{{offering.raisedPercent}}%">
+                                <span style="color:black">{{ offering.raisedPercent }}% Funded</span>
                             </div>
                         </div>
                         <span class="small branding" style="margin:0px 5px">
@@ -62,7 +64,7 @@
                         <span class="small branding" style="margin:0px 5px">
                             <i class="icon" data-icon="&#xe08a;"></i>
                             <em>
-                                Raised £{{ offering.amount_raised|number_format }}
+                                Raised £{{ offering.amountRaised|number_format }}
                             </em>
                         </span>
                         <span class="small branding" style="margin:0px 5px">
