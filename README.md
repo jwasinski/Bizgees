@@ -39,3 +39,5 @@ The files will be downloaded and by default placed into a `vendors` folder withi
 6) From the same directory, run `php app/console server:run` to run the application using the built-in server. 
 
 7) Start setting up your Offering data by logging in to your admin Back Office application at https://backoffice.sandbox.crowdvalley.com 
+
+Testing
