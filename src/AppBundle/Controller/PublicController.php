@@ -42,7 +42,8 @@ class PublicController extends Controller
         }
 		
         $signupForm = $this->createForm(new SignUpType()); 
-        
+
+        $this->params['facebook'] = 'https://api.sandbox.crowdvalley.com/v1//social/facebook/link';
         $this->params['self'] = $self;
         $this->params['login_required'] = $loginRequired;
         $this->params['featured_offerings'] = $featuredOfferings;
