@@ -66,11 +66,11 @@
 						<!--<img class="img-rounded-small" 
 						src="{{ offering.documents[0].url | default(asset('bundles/app/images/blog_preview/blog_shot1.jpg')) }}" alt="image">-->
 							<div class="overlay">
-								<a href="investment_detail.html" class="expand"><i class="icon" data-icon="&#xe067;"></i></a>
+								<a href="invest/{{offering.id}}" class="expand"><i class="icon" data-icon="&#xe067;"></i></a>
 								<a class="close-overlay hidden">x</a>
 							</div><!-- End of overlay -->
 					</div><!-- End of img class  -->
-					<h4 class="text-center"><a href="investment_detail.html">{{ offering.name }}</a>
+					<h4 class="text-center"><a href="invest/{{offering.id}}">{{ offering.name }}</a>
 					</h4>
 					<div class="progress">
 						<div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width:{{ offering.raisedPercent }}%">
