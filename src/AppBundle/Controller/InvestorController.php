@@ -68,7 +68,8 @@ class InvestorController extends BaseController
         }
                         
         $this->params['offering']= $offering;
-        return $this->render('AppBundle:Investor:company_detail.html.twig',$this->params);
+        return $this->render('AppBundle:Investor:invest_detail.html.twig',$this->params);
+
     }
 
        

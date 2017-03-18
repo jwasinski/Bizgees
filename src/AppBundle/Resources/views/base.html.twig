@@ -103,6 +103,8 @@
           <img src="{{asset('bundles/app/images/bizgees.png')}}" alt="footer logo">
           <br/>
           <a href="mailto:info@bizgees.org" style="margin-top: 10px; display: block;">Info@bizgees.org</a>
+          <br/>
+          <a href="legal" style="margin-top: 5px; display: block;">Terms & Conditions</a>
         </div><!-- End of column one -->
 
  			</div><!-- End of column one -->
@@ -140,7 +142,8 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             {{ render(controller('AppBundle:Public:signUp')) }}
-            {{facebook}}
+            <!--<a href="{{facebook}}">Facebook</a><br/>
+            {{facebook}}<br/>-->
         </div>
     </div>
 </div>
