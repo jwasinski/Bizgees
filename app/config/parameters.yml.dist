@@ -20,8 +20,9 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
-    cv_api_endpoint: 'https://api.sandbox.crowdvalley.com' 
+    cv_api_endpoint: 'https://api.sandbox.crowdvalley.com'
     cv_api_key: perceptionsystem-001
     cv_api_secret: 1024880468
-    cv_network: localhost
+    cv_network: perceptionsystem
+
 
