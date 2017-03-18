@@ -1,0 +1,226 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+	<div class="hero">
+		<div class="main-unit">
+	 		<h2>Interest free Alternative Finance for Refugees.</h2>
+	 		<h3>Peer to peer support helping the world become a better place.</h3>
+	 		<a href="">Support a Refugee Entrepreneur</a>
+	 	</div>
+	</div>
+	<!--<div class="container-fluid slider">
+		<div id="layerslider" style="width: 100%; height: 350px;">
+    		<div class="ls-slide" data-ls="slidedelay: 10000;">
+				<img src="{{asset('bundles/app/images/slider_images/sanfrancisco.jpg')}}" class="ls-bg bright-img" alt="Slide background">
+			</div>
+      	</div>
+	</div>-->
+	
+	<!--<div class="container content-breather">
+		<div class="row">
+			<div class="col-md-4 col-sm-4 animatedParent animateOnce" data-appear-top-offset='-200'>
+				<div class="icon-holder">
+					<div data-icon="&#xe026;" class="icon animated bounceInRight"></div>
+				</div>
+				<h3 class="text-center">Support for Entrepreneurs</h3>
+				<p class="text-center">
+					We assist entrepreneurs in getting their business ideas off the ground, and help them to be investment ready
+				</p>
+			</div>
+			<div class="col-md-4 col-sm-4 animatedParent animateOnce" data-appear-top-offset='-200'>
+				<div class="icon-holder">
+					<div data-icon="&#xe032;" class="icon animated bounceInDown"></div>
+				</div>
+				<h3 class="text-center">Support for Investors</h3>
+				<p class="text-center">
+					Our funding platform provides secure access to investor information and your portfolio 
+				</p>
+			</div>
+			<div class="col-md-4 col-sm-4 animatedParent animateOnce" data-appear-top-offset='-200'>
+				<div class="icon-holder">
+					<div data-icon="&#xe06f;" class="icon animated bounceInLeft"></div>
+				</div>
+				<h3 class="text-center">Compliance under control</h3>
+				<p class="text-center">
+					We look after all the compliance issues to ensure that investors are accredited in line with FCA regulations and other UK financial requirements
+				</p>
+			</div>
+		</div>
+	</div>-->	
+
+<div id="overlays" class="overlays container-fluid content-breather hero-unit">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Featured Live Investments</h3>
+			</div><!-- End of column -->
+		</div><!-- End of row -->	
+	</div><!-- End of container -->
+	<div class="container">
+		<div class="row">
+			{% for offering in featured_offerings %}
+
+			<!--{{offering.documents[0].url | default('asd')}}-->
+				<div class="col-sm-4 animatedParent animateOnce" data-appear-top-offset='-200' >
+					<div class="img" style="background-image: url({{ offering.documents[0].url | default(asset('bundles/app/images/blog_preview/blog_shot1.jpg')) }}); width: 100%; height: 200px; background-size: cover;)">
+						<!--<img class="img-rounded-small" 
+						src="{{ offering.documents[0].url | default(asset('bundles/app/images/blog_preview/blog_shot1.jpg')) }}" alt="image">-->
+							<div class="overlay">
+								<a href="investment_detail.html" class="expand"><i class="icon" data-icon="&#xe067;"></i></a>
+								<a class="close-overlay hidden">x</a>
+							</div><!-- End of overlay -->
+					</div><!-- End of img class  -->
+					<h4 class="text-center"><a href="investment_detail.html">{{ offering.name }}</a>
+					</h4>
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width:{{ offering.raisedPercent }}%">
+							<span style="color:black">{{ offering.raisedPercent }}% Funded</span>
+						</div>
+					</div>
+					<hr class="underline">
+					<ul class="blog-meta">
+						<li>{{ offering.category }}</li>
+						<li><i class="icon" data-icon="&#xe057;"></i> 
+						<em class="heavy">{{ offering.investorCount }}</em> Investors</li>
+					</ul>
+				</div><!-- End of column -->
+				
+			{% endfor %}
+				
+		</div><!-- End of row -->
+	</div><!-- End of container -->
+</div><!-- End of main fluid container, housing grey background, contains the blog preview -->
+		
+<!-- Start of client testimonial section -->
+		
+<!--<div class="container content-breather" >
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h3>Investor testimonials</h3>
+				<p>We are proud to have some of the best investors in the world, 
+				find out what they have to say about us.</p>
+				<hr>
+		</div>
+	</div>
+	
+	<div class="row animatedParent animateOnce" data-appear-top-offset='-300'>
+		<div class="col-md-2 col-sm-2" >
+			<img class="img-circle centered animated growIn  " src="{{asset('bundles/app/images/avatars/avatar4.jpg')}}" alt="image">
+		</div>
+		<div class="col-md-4 col-sm-10">
+			<div class="job-title">
+				<p class="heavy">Freya Sharpe</p>
+					<p class="small"><em class="branding">San Francisco</em></p>
+			</div>
+				<blockquote>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed 
+					neque dui, eleifend nec nulla eget, ornare tincidunt elit. 
+					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+					posuere cubilia Curae; Nam placerat nunc in sagittis rhoncus. 
+				</blockquote>
+			</div>
+			
+			<div class="col-md-2 col-sm-2">
+			<img class="img-circle centered animated growIn  " src="{{asset('bundles/app/images/avatars/avatar5.jpg')}}" alt="image">
+		</div>
+		<div class="col-md-4 col-sm-10">
+			<div class="job-title">
+				<p class="heavy">Jonny Turves</p>
+					<p class="small"><em class="branding">New York</em></p>
+			</div>
+				<blockquote>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed 
+					neque dui, eleifend nec nulla eget, ornare tincidunt elit. 
+					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+					posuere cubilia Curae; Nam placerat nunc in sagittis rhoncus. 
+				</blockquote>
+			</div>
+		</div>
+		
+		<div class="row animatedParent animateOnce" data-appear-top-offset='-300'>
+		<div class="col-md-2 col-sm-2">
+			<img class="img-circle centered animated growIn  " src="{{asset('bundles/app/images/avatars/avatar6.jpg')}}" alt="image">
+		</div>
+		<div class="col-md-4 col-sm-10">
+			<div class="job-title">
+				<p class="heavy">Max York</p>
+					<p class="small"><em class="branding">Los Angeles</em></p>
+			</div>
+				<blockquote>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed 
+					neque dui, eleifend nec nulla eget, ornare tincidunt elit. 
+					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+					posuere cubilia Curae; Nam placerat nunc in sagittis rhoncus. 
+				</blockquote>
+			</div>
+			
+			<div class="col-md-2 col-sm-2">
+			<img class="img-circle centered animated growIn  " src="{{asset('bundles/app/images/avatars/avatar7.jpg')}}" alt="image">
+		</div>
+		<div class="col-md-4 col-sm-10">
+			<div class="job-title">
+				<p class="heavy">Jess Cornish</p>
+					<p class="small"><em class="branding">Austin</em></p>
+			</div>
+				<blockquote>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed 
+					neque dui, eleifend nec nulla eget, ornare tincidunt elit. 
+					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+					posuere cubilia Curae; Nam placerat nunc in sagittis rhoncus. 
+				</blockquote>
+			</div>
+		</div>
+	</div>	
+ -->
+	
+<!--<div id="overlays" class="container-fluid content-breather no-padding  hero-unit">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Successful Investments</h3>
+					<p>
+						Find out more about the companies that have successfully raised capital on our platform.
+					</p>
+			</div>
+		</div>
+	</div>
+</div>
+-->
+	
+	<!-- Start of team profiles -->
+	
+<div class="container-fluid content-breather">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h3>Member of F10 FinTech Accelerator Program 2016/ 2017  in Zurich, Switzerland.</h3>
+				<a href="http://www.f10.ch/"><img src="{{asset('bundles/app/images/f10.jpg')}}" style="margin-top:10px; max-width: 250px; width: 60%;"></a>
+			</div>
+		</div><!-- End of row -->
+	</div><!-- End of container -->
+</div><!-- End of fluid container -->
+
+<!-- End of team profiles -->
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(function (){
+            var requiredLogin = '{{ login_required }}';
+            if (requiredLogin === 'login') {
+                // Show login popup
+                $('#modal-login').modal('show');
+            }
+        });
+
+        $(document).ready(function () {
+	        //add editors
+	        $('.featured-company').on('click', function() {
+	        	var location = $(this).attr('data-link-target');
+
+	        	window.location.replace(location);
+	        });
+	    });
+    </script>
+{% endblock %}
