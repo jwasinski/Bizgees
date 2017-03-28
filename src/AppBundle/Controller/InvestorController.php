@@ -19,12 +19,12 @@ class InvestorController extends BaseController
      */
     public function viewInvestmentOpportunitiesAction(Request $request)
     {
-        $authenticated = $this->get('session')->get('authenticated');
-        if (!$authenticated) {
-            return $this->redirectToRoute('homepage',array('required' => 'login'));
-        }
+       // $authenticated = $this->get('session')->get('authenticated');
+        //if (!$authenticated) {
+         //   return $this->redirectToRoute('homepage',array('required' => 'login'));
+       // }
         $offeringArray = array(); $offeringList = array();
-        if ($this->get('session')->get('authenticated') == true) {
+        //if ($this->get('session')->get('authenticated') == true) {
             $cvResponse = $this->get('offering')->getOfferings();
                         
             if ($cvResponse->outcome == CVResponse::RESPONSE_OUTCOME_SUCCESS) {
@@ -38,7 +38,7 @@ class InvestorController extends BaseController
 					}
                 }
             }
-        }
+        //}
 
         $this->params['offerings']= $offerings;
         $this->params['menu_item']= 'investment_opportunities';
@@ -57,7 +57,7 @@ class InvestorController extends BaseController
         }
 
         $offering = [];
-        if ($this->get('session')->get('authenticated') == true) {
+        //if ($this->get('session')->get('authenticated') == true) {
 
             $cvResponse = $this->get('offering')->getOfferingWithId($offering_id);
 
@@ -65,7 +65,7 @@ class InvestorController extends BaseController
 
                 $offering = $cvResponse->object;
             }
-        }
+        //}
                         
         $this->params['offering']= $offering;
         return $this->render('AppBundle:Investor:invest_detail.html.twig',$this->params);
