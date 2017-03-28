@@ -32,7 +32,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7">
-						<h4>Offering Test - {{offering.id}}</h4>
+						<h4>Offering Test</h4>
 						
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" aria-valuenow="{{ offering.raisedPercent }}" aria-valuemin="0" aria-valuemax="100" style="width:{{offering.raisedPercent}}%">
@@ -84,6 +84,8 @@
 						</p>
 						
 						<!-- Start of sidebar accordion -->
+
+						{{offering.offeringDescription}}
 						
 						<div class="panel-group" id="accordion">
 							<div class="panel panel-default">

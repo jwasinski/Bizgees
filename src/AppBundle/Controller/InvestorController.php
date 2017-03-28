@@ -26,7 +26,7 @@ class InvestorController extends BaseController
         $offeringArray = array(); $offeringList = array();
         //if ($this->get('session')->get('authenticated') == true) {
             $cvResponse = $this->get('offering')->getOfferings();
-                        
+
             if ($cvResponse->outcome == CVResponse::RESPONSE_OUTCOME_SUCCESS) {
 
                 $offerings = $cvResponse->objectList;
@@ -51,10 +51,10 @@ class InvestorController extends BaseController
 
     public function viewInvestmentAction($offering_id)
     {
-        $authenticated = $this->get('session')->get('authenticated');
+       /* $authenticated = $this->get('session')->get('authenticated');
         if (!$authenticated) {
             return $this->redirectToRoute('homepage',array('required' => 'login'));
-        }
+        }*/
 
         $offering = [];
         //if ($this->get('session')->get('authenticated') == true) {
@@ -78,11 +78,11 @@ class InvestorController extends BaseController
      */
     public function viewOfferingAction($offering_id)
     {
-        $authenticated = $this->get('session')->get('authenticated');
+       /* $authenticated = $this->get('session')->get('authenticated');
         if (!$authenticated) {
             return $this->redirectToRoute('homepage',array('required' => 'login'));
         }
-
+*/
         $offering = [];
         $organization = [];
         if ($this->get('session')->get('authenticated') == true) {
